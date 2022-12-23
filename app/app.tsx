@@ -12,7 +12,7 @@ const queryClient = new QueryClient({
   }
 })
 
-export default function App() {
+const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <SafeAreaProvider>
@@ -22,3 +22,5 @@ export default function App() {
     </QueryClientProvider>
   )
 }
+
+export default App
