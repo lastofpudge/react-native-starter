@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native'
 import React, { FC } from 'react'
 import { Pressable, Text, View } from 'react-native'
-import { useQuery } from 'react-query'
+import { useQuery } from '@tanstack/react-query'
 
 import styles from './styles'
 import Layout from '@/components/layout'
@@ -10,7 +10,7 @@ import { PostService } from '@/services/post.service'
 
 const Home: FC = () => {
   const nav = useNavigation<NavProps>()
-  const { data: posts } = useQuery('posts', () => PostService.getPosts(2))
+  const { data: posts } = useQuery(['posts', 2], () => PostService.getPosts(2))
 
   return (
     <Layout>
