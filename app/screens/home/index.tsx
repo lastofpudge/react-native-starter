@@ -10,7 +10,12 @@ import { PostService } from '@/services/post.service'
 
 const Home: FC = () => {
   const nav = useNavigation<NavProps>()
-  const { data: posts } = useQuery(['posts', 2], () => PostService.getPosts(2))
+  const { data: posts } = useQuery({
+    queryKey: ['posts'],
+    queryFn: () => {
+      return PostService.getPosts(2)
+    }
+  })
 
   return (
     <Layout>
