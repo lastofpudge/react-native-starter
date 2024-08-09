@@ -18,5 +18,6 @@
       "@/*": ["./app/*"]
     }
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "include": ["**/*.ts", "**/*.tsx", "**/*.d.ts", "**/*.ts", "**/*.tsx", "**/*.d.ts"]
 }
