@@ -24,7 +24,7 @@ const Home: FC = () => {
         <Pressable className='mt-2' onPress={() => nav.push('Home')}>
           <Text style={styles.pressableText}>Refresh</Text>
         </Pressable>
-        <View className='mt-2'>
+        <View className='mt-2 mx-2'>
           {posts &&
             posts.map((post) => (
               <View key={post.id.toString()}>

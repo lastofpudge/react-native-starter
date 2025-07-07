@@ -2,7 +2,7 @@ module.exports = function (api) {
   api.cache(true)
 
   return {
-    presets: ['babel-preset-expo'],
+    presets: ['babel-preset-expo', 'nativewind/babel'],
     plugins: [
       [
         'babel-plugin-root-import',
@@ -10,8 +10,7 @@ module.exports = function (api) {
           rootPathSuffix: 'app/',
           rootPathPrefix: '@/'
         }
-      ],
-      ['nativewind/babel']
+      ]
     ]
   }
 }
