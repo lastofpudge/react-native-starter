@@ -1,12 +1,12 @@
 import { useNavigation } from '@react-navigation/native'
-import React, { FC } from 'react'
-import { Pressable, Text, View } from 'react-native'
 import { useQuery } from '@tanstack/react-query'
+import React, { type FC } from 'react'
+import { Pressable, Text, View } from 'react-native'
 
-import styles from './styles'
 import Layout from '@/components/layout'
-import { NavProps } from '@/navigation/IRootStackParamList'
+import type { NavProps } from '@/navigation/IRootStackParamList'
 import { PostService } from '@/services/post.service'
+import styles from './styles'
 
 const Home: FC = () => {
   const nav = useNavigation<NavProps>()
@@ -25,12 +25,11 @@ const Home: FC = () => {
           <Text style={styles.pressableText}>Refresh</Text>
         </Pressable>
         <View className='mt-2 mx-2'>
-          {posts &&
-            posts.map((post) => (
-              <View key={post.id.toString()}>
-                <Text className='mb-2'>{post.title}</Text>
-              </View>
-            ))}
+          {posts?.map((post) => (
+            <View key={post.id.toString()}>
+              <Text className='mb-2'>{post.title}</Text>
+            </View>
+          ))}
         </View>
       </View>
     </Layout>

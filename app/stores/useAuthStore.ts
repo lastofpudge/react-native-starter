@@ -7,7 +7,7 @@ interface AuthState {
   isAuthenticated: boolean
   token: string | null
   user: { email: string } | null
-  login: (email: string, password: string) => Promise<{ token?: string; error?: any }>
+  login: (email: string, password: string) => Promise<{ token?: string; error?: string }>
   logout: () => void
 }
 
@@ -26,9 +26,8 @@ export const useAuthStore = create<AuthState>()(
             token: data.token
           })
           return data
-        } else {
-          return { error: 'Login failed' }
         }
+        return { error: 'Login failed' }
       },
       logout: () =>
         set({

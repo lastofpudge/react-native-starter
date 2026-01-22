@@ -1,16 +1,6 @@
-module.exports = function (api) {
+module.exports = (api) => {
   api.cache(true)
-
   return {
-    presets: ['babel-preset-expo', 'nativewind/babel'],
-    plugins: [
-      [
-        'babel-plugin-root-import',
-        {
-          rootPathSuffix: 'app/',
-          rootPathPrefix: '@/'
-        }
-      ]
-    ]
+    presets: ['babel-preset-expo', 'nativewind/babel']
   }
 }
