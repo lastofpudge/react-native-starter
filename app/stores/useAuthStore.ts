@@ -1,6 +1,7 @@
 import { AuthService } from '@/services/auth.service'
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
+import type { StateStorage } from 'zustand/middleware'
 import secureStorage from './secureStorage'
 
 interface AuthState {
@@ -38,8 +39,7 @@ export const useAuthStore = create<AuthState>()(
     }),
     {
       name: 'auth-storage',
-      // @ts-ignore
-      storage: secureStorage
+      storage: secureStorage as StateStorage
     }
   )
 )

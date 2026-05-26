@@ -30,9 +30,13 @@ const AuthScreen = () => {
   })
 
   const onSubmit = async (data: LoginForm) => {
-    const result = await login(data.email, data.password)
-    if (result.error) {
-      setError('root', { message: result.error })
+    try {
+      const result = await login(data.email, data.password)
+      if (result.error) {
+        setError('root', { message: result.error })
+      }
+    } catch {
+      setError('root', { message: 'Unexpected error. Please try again.' })
     }
   }
 

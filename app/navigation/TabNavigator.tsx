@@ -23,6 +23,7 @@ const Tab = createBottomTabNavigator<ITabParamList>()
 
 const TabNavigator = () => {
   const totalItems = useCartStore((s) => s.totalItems)
+  const cartCount = totalItems()
 
   return (
     <Tab.Navigator
@@ -39,7 +40,7 @@ const TabNavigator = () => {
         component={CartScreen}
         options={{
           title: 'Корзина',
-          tabBarBadge: totalItems() > 0 ? totalItems() : undefined
+          tabBarBadge: cartCount > 0 ? cartCount : undefined
         }}
       />
       <Tab.Screen name='Profile' component={ProfileScreen} options={{ title: 'Профиль' }} />

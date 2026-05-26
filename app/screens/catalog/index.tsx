@@ -33,7 +33,11 @@ const ProductCard = ({ item }: { item: IProduct }) => {
 }
 
 const CatalogScreen = () => {
-  const { data: products = [], isLoading } = useQuery({
+  const {
+    data: products = [],
+    isLoading,
+    isError
+  } = useQuery({
     queryKey: ['products'],
     queryFn: ProductService.getProducts
   })
@@ -43,6 +47,16 @@ const CatalogScreen = () => {
       <Layout>
         <View style={styles.center}>
           <ActivityIndicator size='large' />
+        </View>
+      </Layout>
+    )
+  }
+
+  if (isError) {
+    return (
+      <Layout>
+        <View style={styles.center}>
+          <Text style={styles.headerTitle}>Не удалось загрузить товары</Text>
         </View>
       </Layout>
     )

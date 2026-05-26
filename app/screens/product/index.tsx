@@ -19,16 +19,33 @@ const ProductScreen = () => {
   const { productId } = route.params
   const addItem = useCartStore((s) => s.addItem)
 
-  const { data: product, isLoading } = useQuery({
+  const {
+    data: product,
+    isLoading,
+    isError
+  } = useQuery({
     queryKey: ['product', productId],
     queryFn: () => ProductService.getProduct(productId)
   })
 
-  if (isLoading || !product) {
+  if (isLoading) {
     return (
       <Layout>
         <View style={styles.center}>
           <ActivityIndicator size='large' />
+        </View>
+      </Layout>
+    )
+  }
+
+  if (isError || !product) {
+    return (
+      <Layout>
+        <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+          <Text style={styles.backText}>← Назад</Text>
+        </TouchableOpacity>
+        <View style={styles.center}>
+          <Text>Товар не найден</Text>
         </View>
       </Layout>
     )
