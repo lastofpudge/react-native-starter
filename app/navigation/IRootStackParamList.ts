@@ -1,7 +1,2 @@
-import type { StackNavigationProp } from '@react-navigation/stack'
-
-export type IRootStackParamList = {
-  Home: undefined
-}
-
-export type NavProps = StackNavigationProp<IRootStackParamList>
+// Re-export из types для обратной совместимости
+export type { IRootStackParamList } from '@/types/navigation'
