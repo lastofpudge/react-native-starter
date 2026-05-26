@@ -1,6 +1,7 @@
 node_modules/
 .expo/
 dist/
+build-info
 npm-debug.*
 *.jks
 *.p8
@@ -18,3 +19,7 @@ web-build/
 .env.local
 
 .claude
+CLAUDE.md
+
+# Brainstorming visuals
+.superpowers/
