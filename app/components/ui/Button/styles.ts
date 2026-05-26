@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native'
 import { theme } from '@/theme'
+import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
   base: {
@@ -8,33 +8,33 @@ export const styles = StyleSheet.create({
     paddingHorizontal: theme.spacing.lg,
     alignItems: 'center',
     justifyContent: 'center',
-    minHeight: 48,
+    minHeight: 48
   },
   primary: {
-    backgroundColor: theme.colors.primary,
+    backgroundColor: theme.colors.primary
   },
   secondary: {
     backgroundColor: theme.colors.surface,
     borderWidth: 1,
-    borderColor: theme.colors.border,
+    borderColor: theme.colors.border
   },
   ghost: {
-    backgroundColor: 'transparent',
+    backgroundColor: 'transparent'
   },
   disabled: {
-    opacity: 0.5,
+    opacity: 0.5
   },
   text: {
     fontSize: theme.typography.body.fontSize,
-    fontWeight: '600',
+    fontWeight: '600'
   },
   primaryText: {
-    color: '#FFFFFF',
+    color: '#FFFFFF'
   },
   secondaryText: {
-    color: theme.colors.text,
+    color: theme.colors.text
   },
   ghostText: {
-    color: theme.colors.primary,
-  },
+    color: theme.colors.primary
+  }
 })

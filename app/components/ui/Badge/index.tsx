@@ -12,13 +12,13 @@ interface BadgeProps {
 const variantStyle = {
   default: styles.default,
   success: styles.success,
-  error: styles.error,
+  error: styles.error
 } as const
 
 const variantTextStyle = {
   default: styles.defaultText,
   success: styles.successText,
-  error: styles.errorText,
+  error: styles.errorText
 } as const
 
 export const Badge: FC<BadgeProps> = ({ label, variant = 'default' }) => {

@@ -1,9 +1,9 @@
-import { StyleSheet } from 'react-native'
 import { theme } from '@/theme'
+import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
   container: {
-    marginBottom: theme.spacing.md,
+    marginBottom: theme.spacing.md
   },
   label: {
     fontSize: theme.typography.caption.fontSize,
@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     color: theme.colors.textSecondary,
     marginBottom: theme.spacing.xs,
     textTransform: 'uppercase',
-    letterSpacing: 0.5,
+    letterSpacing: 0.5
   },
   input: {
     borderWidth: 1,
@@ -23,15 +23,15 @@ export const styles = StyleSheet.create({
     fontSize: theme.typography.body.fontSize,
     fontWeight: theme.typography.body.fontWeight,
     color: theme.colors.text,
-    backgroundColor: theme.colors.background,
+    backgroundColor: theme.colors.background
   },
   inputError: {
-    borderColor: theme.colors.error,
+    borderColor: theme.colors.error
   },
   error: {
     fontSize: theme.typography.caption.fontSize,
     fontWeight: theme.typography.caption.fontWeight,
     color: theme.colors.error,
-    marginTop: theme.spacing.xs,
-  },
+    marginTop: theme.spacing.xs
+  }
 })

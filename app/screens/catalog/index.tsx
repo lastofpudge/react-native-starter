@@ -1,13 +1,13 @@
+import { useNavigation } from '@react-navigation/native'
 import { useQuery } from '@tanstack/react-query'
 import { Image } from 'expo-image'
-import { useNavigation } from '@react-navigation/native'
 import { ActivityIndicator, FlatList, Text, View } from 'react-native'
 
 import Layout from '@/components/layout'
 import { Card } from '@/components/ui/Card'
 import { ProductService } from '@/services/product.service'
-import type { IProduct } from '@/types/product'
 import type { CatalogNavProp } from '@/types/navigation'
+import type { IProduct } from '@/types/product'
 import { styles } from './styles'
 
 const ProductCard = ({ item }: { item: IProduct }) => {
@@ -35,7 +35,7 @@ const ProductCard = ({ item }: { item: IProduct }) => {
 const CatalogScreen = () => {
   const { data: products = [], isLoading } = useQuery({
     queryKey: ['products'],
-    queryFn: ProductService.getProducts,
+    queryFn: ProductService.getProducts
   })
 
   if (isLoading) {

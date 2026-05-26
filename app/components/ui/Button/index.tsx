@@ -1,6 +1,6 @@
+import { theme } from '@/theme'
 import type { FC } from 'react'
 import { ActivityIndicator, Text, TouchableOpacity, type TouchableOpacityProps } from 'react-native'
-import { theme } from '@/theme'
 import { styles } from './styles'
 
 type ButtonVariant = 'primary' | 'secondary' | 'ghost'
@@ -14,13 +14,13 @@ interface ButtonProps extends TouchableOpacityProps {
 const variantTextStyle = {
   primary: styles.primaryText,
   secondary: styles.secondaryText,
-  ghost: styles.ghostText,
+  ghost: styles.ghostText
 } as const
 
 const variantStyle = {
   primary: styles.primary,
   secondary: styles.secondary,
-  ghost: styles.ghost,
+  ghost: styles.ghost
 } as const
 
 export const Button: FC<ButtonProps> = ({

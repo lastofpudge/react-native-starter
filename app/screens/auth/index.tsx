@@ -11,7 +11,7 @@ import { styles } from './styles'
 
 const schema = z.object({
   email: z.string().email('Неверный формат email'),
-  password: z.string().min(6, 'Минимум 6 символов'),
+  password: z.string().min(6, 'Минимум 6 символов')
 })
 
 type LoginForm = z.infer<typeof schema>
@@ -23,10 +23,10 @@ const AuthScreen = () => {
     control,
     handleSubmit,
     setError,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting }
   } = useForm<LoginForm>({
     resolver: zodResolver(schema),
-    defaultValues: { email: '', password: '' },
+    defaultValues: { email: '', password: '' }
   })
 
   const onSubmit = async (data: LoginForm) => {
@@ -77,11 +77,7 @@ const AuthScreen = () => {
 
         {errors.root ? <Text style={styles.error}>{errors.root.message}</Text> : null}
 
-        <Button
-          title='Войти'
-          onPress={handleSubmit(onSubmit)}
-          loading={isSubmitting}
-        />
+        <Button title='Войти' onPress={handleSubmit(onSubmit)} loading={isSubmitting} />
       </View>
     </Layout>
   )

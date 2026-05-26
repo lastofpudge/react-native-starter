@@ -1,6 +1,6 @@
+import { type RouteProp, useNavigation, useRoute } from '@react-navigation/native'
 import { useQuery } from '@tanstack/react-query'
 import { Image } from 'expo-image'
-import { useNavigation, useRoute, type RouteProp } from '@react-navigation/native'
 import { ActivityIndicator, ScrollView, Text, TouchableOpacity, View } from 'react-native'
 
 import Layout from '@/components/layout'
@@ -21,7 +21,7 @@ const ProductScreen = () => {
 
   const { data: product, isLoading } = useQuery({
     queryKey: ['product', productId],
-    queryFn: () => ProductService.getProduct(productId),
+    queryFn: () => ProductService.getProduct(productId)
   })
 
   if (isLoading || !product) {

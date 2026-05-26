@@ -14,18 +14,12 @@ const CartItem = ({ item }: { item: ICartItem }) => {
   return (
     <Card>
       <View style={styles.itemCard}>
-        <Image
-          source={{ uri: item.product.image }}
-          style={styles.itemImage}
-          contentFit='contain'
-        />
+        <Image source={{ uri: item.product.image }} style={styles.itemImage} contentFit='contain' />
         <View style={styles.itemInfo}>
           <Text style={styles.itemTitle} numberOfLines={2}>
             {item.product.title}
           </Text>
-          <Text style={styles.itemPrice}>
-            ${(item.product.price * item.quantity).toFixed(2)}
-          </Text>
+          <Text style={styles.itemPrice}>${(item.product.price * item.quantity).toFixed(2)}</Text>
         </View>
         <View style={styles.controls}>
           <TouchableOpacity
@@ -41,10 +35,7 @@ const CartItem = ({ item }: { item: ICartItem }) => {
           >
             <Text style={styles.controlText}>+</Text>
           </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.removeButton}
-            onPress={() => removeItem(item.product.id)}
-          >
+          <TouchableOpacity style={styles.removeButton} onPress={() => removeItem(item.product.id)}>
             <Text style={styles.removeText}>✕</Text>
           </TouchableOpacity>
         </View>

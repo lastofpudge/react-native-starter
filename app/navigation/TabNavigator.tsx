@@ -30,27 +30,19 @@ const TabNavigator = () => {
         headerShown: false,
         tabBarActiveTintColor: theme.colors.primary,
         tabBarInactiveTintColor: theme.colors.textSecondary,
-        tabBarStyle: { borderTopColor: theme.colors.border },
+        tabBarStyle: { borderTopColor: theme.colors.border }
       }}
     >
-      <Tab.Screen
-        name='Catalog'
-        component={CatalogNavigator}
-        options={{ title: 'Каталог' }}
-      />
+      <Tab.Screen name='Catalog' component={CatalogNavigator} options={{ title: 'Каталог' }} />
       <Tab.Screen
         name='Cart'
         component={CartScreen}
         options={{
           title: 'Корзина',
-          tabBarBadge: totalItems() > 0 ? totalItems() : undefined,
+          tabBarBadge: totalItems() > 0 ? totalItems() : undefined
         }}
       />
-      <Tab.Screen
-        name='Profile'
-        component={ProfileScreen}
-        options={{ title: 'Профиль' }}
-      />
+      <Tab.Screen name='Profile' component={ProfileScreen} options={{ title: 'Профиль' }} />
     </Tab.Navigator>
   )
 }
