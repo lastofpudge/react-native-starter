@@ -13,11 +13,10 @@
     "skipLibCheck": true,
     "moduleResolution": "bundler",
     "strict": true,
-    "baseUrl": ".",
     "paths": {
       "@/*": ["./app/*"]
     }
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx", "**/*.d.ts", "nativewind-env.d.ts"]
+  "include": ["**/*.ts", "**/*.tsx", "**/*.d.ts"]
 }
